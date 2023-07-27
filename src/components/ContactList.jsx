@@ -16,11 +16,11 @@ const ContactList = () => {
     useEffect(() => {
         const fetchContacts = async() => {
             try{
-                const response = fetch('https://jsonplaceholder.typicode.com/users')
-                const data = response.json()
-                console.log(data)
+                const response = await fetch('https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users')
+                const data = await response.json()
+                setContacts(data)
             } catch (err) {
-                console.log(`error in useEffect`)
+                console.log(error)
             }
         }
         fetchContacts();
